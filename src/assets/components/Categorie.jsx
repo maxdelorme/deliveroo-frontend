@@ -1,8 +1,6 @@
 import RestoCard from "./restoCard";
 
 const categorie = ({ categorie }) => {
-  console.log(categorie);
-
   return categorie.meals.length ? (
     <div className="categorie">
       <h2>{categorie.name}</h2>

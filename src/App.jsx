@@ -17,7 +17,6 @@ function App() {
         );
         setData(response.data);
         setIsLoading(false);
-        console.log(Object.keys(response.data));
       } catch (error) {}
     };
     fetchData();
