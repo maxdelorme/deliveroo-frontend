@@ -22,9 +22,7 @@ const BasketItem = ({ item }) => {
         />
       </span>
       <span className="title">{title}</span>
-      <span className="price">
-        {myFormat(Math.round(price * count * 100) / 100)}{" "}
-      </span>
+      <span className="price">{myFormat(price * count)}</span>
     </div>
   );
 };
