@@ -1,5 +1,6 @@
 import { useBasketContext } from "./BasketContentProvider";
 import { IoIosStar } from "react-icons/io";
+import myFormat from "../utils/EuroFormat";
 
 const RestoCard = ({ resto }) => {
   const { addItemToBasket } = useBasketContext();
@@ -12,7 +13,7 @@ const RestoCard = ({ resto }) => {
         <header>{resto.title}</header>
         <p className="desc">{resto.description}</p>
         <footer>
-          <span className="price">{resto.price} €</span>
+          <span className="price">{myFormat(resto.price)}</span>
           {resto.popular && (
             <span className="pop">
               {" "}
