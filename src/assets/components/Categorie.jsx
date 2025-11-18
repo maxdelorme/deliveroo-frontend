@@ -5,9 +5,9 @@ const categorie = ({ categorie }) => {
     <div className="categorie">
       <h2>{categorie.name}</h2>
       <ul className="listRestoCards">
-        {categorie.meals.map((item) => {
+        {categorie.meals.map((item, index) => {
           return (
-            <li>
+            <li key={item + "_" + index}>
               <RestoCard resto={item}></RestoCard>
             </li>
           );

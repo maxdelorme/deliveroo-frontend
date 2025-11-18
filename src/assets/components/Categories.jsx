@@ -3,9 +3,9 @@ import Categorie from "./Categorie";
 const Categories = ({ categories }) => {
   return (
     <ul className="categories">
-      {categories.map((item) => {
+      {categories.map((item, index) => {
         return (
-          <li>
+          <li key={item + "_" + index}>
             <Categorie categorie={item}></Categorie>
           </li>
         );
