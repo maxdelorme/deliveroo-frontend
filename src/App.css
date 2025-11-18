@@ -221,6 +221,7 @@ main {
     & > li {
       flex: 1;
       min-width: 300px;
+      max-width: calc(50% - 20px);
     }
     .restoCard {
       font-size: 1rem;
