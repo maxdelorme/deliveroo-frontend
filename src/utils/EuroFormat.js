@@ -1,0 +1,8 @@
+import format from "format-number";
+var myFormat = format({
+  suffix: " €",
+  integerSeparator: " ",
+  decimal: ",",
+  padRight: 2,
+});
+export default myFormat;

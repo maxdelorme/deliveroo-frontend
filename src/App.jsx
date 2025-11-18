@@ -5,6 +5,8 @@ import Header from "./components/Header";
 import Banner from "./components/Banner";
 import Categories from "./components/Categories";
 import Basket from "./components/Basket";
+import { BasketContentProvider } from "./components/BasketContentProvider";
+
 function App() {
   const [data, setData] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
@@ -28,12 +30,14 @@ function App() {
     <div className="app">
       <Header></Header>
       <Banner restaurant={data.restaurant}></Banner>
-      <main>
-        <div className="container">
-          <Categories categories={data.categories}></Categories>
-          <Basket></Basket>
-        </div>
-      </main>
+      <BasketContentProvider>
+        <main>
+          <div className="container">
+            <Categories categories={data.categories}></Categories>
+            <Basket></Basket>
+          </div>
+        </main>
+      </BasketContentProvider>
     </div>
   );
 }

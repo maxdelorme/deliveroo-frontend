@@ -151,6 +151,7 @@ main {
     }
   }
 }
+
 @media (width > 768px) {
   main .container {
     display: flex;
@@ -163,11 +164,17 @@ main {
         display: none;
       }
       .panel {
+        position: sticky;
+        top: 20px;
         display: block;
         background-color: white;
         padding: 5px;
         border-radius: 5px;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
         box-shadow: rgba(46, 51, 51, 0.07) 0px 22px 24px 0px;
+        color: var(--color-std);
         .validate {
           background-color: #bac3c3;
           border-radius: 5px;
@@ -177,12 +184,67 @@ main {
           justify-content: center;
           align-items: center;
         }
+        .validate.withitems {
+          background-color: #00cdbd;
+          color: white;
+        }
+        hr {
+          border-top: 1px solid var(--color-std);
+          height: 0.5px;
+          width: 100%;
+          color: transparent;
+        }
         .content {
           color: var(--color-std);
-          height: 200px;
+          height: 150px;
           display: flex;
           justify-content: center;
           align-items: center;
+        }
+        .listItems {
+          display: flex;
+          align-items: stretch;
+          gap: 5px;
+          flex-direction: column;
+          margin-top: 5px;
+        }
+        .listItems .basketItem:nth-child(2n) {
+          background-color: #f3f5f5;
+        }
+        .basketItem {
+          display: flex;
+          align-items: center;
+          gap: 5px;
+          padding: 5px 0;
+
+          .counter {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.8rem;
+            min-width: 50px;
+            svg {
+              fill: #00cdbd;
+            }
+          }
+          .title {
+            text-align: left;
+            font-size: 0.8rem;
+          }
+          .price {
+            margin-left: auto;
+            text-wrap: nowrap;
+          }
+        }
+        .subTotal,
+        .livraison,
+        .total {
+          display: flex;
+          justify-content: space-between;
+        }
+        .total {
+          font-weight: 600;
+          color: rgb(38, 38, 38);
         }
       }
     }
@@ -214,7 +276,7 @@ main {
     }
   }
 }
-@media (width > 1024px) {
+@media (width > 1124px) {
   main .categories .categorie .listRestoCards {
     flex-direction: row;
     flex-wrap: wrap;

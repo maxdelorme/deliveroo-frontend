@@ -1,7 +1,13 @@
+import { useBasketContext } from "./BasketContentProvider";
 import { IoIosStar } from "react-icons/io";
+
 const RestoCard = ({ resto }) => {
+  const { addItemToBasket } = useBasketContext();
   return (
-    <div className="restoCard">
+    <div
+      className="restoCard"
+      onClick={() => addItemToBasket(resto.id, resto.price, resto.title)}
+    >
       <div className="col1">
         <header>{resto.title}</header>
         <p className="desc">{resto.description}</p>
