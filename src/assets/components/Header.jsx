@@ -2,7 +2,9 @@ import logo from "../img/logo.svg";
 const Header = () => {
   return (
     <header>
-      <img src={logo}></img>
+      <div className="container">
+        <img src={logo}></img>
+      </div>
     </header>
   );
 };

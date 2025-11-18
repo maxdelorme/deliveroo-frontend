@@ -1,6 +1,6 @@
 const Banner = ({ restaurant }) => {
   return (
-    <section className="banner">
+    <section className="banner container">
       <img src={restaurant.picture} alt={restaurant.name}></img>
       <dd>
         <h3>{restaurant.name}</h3>

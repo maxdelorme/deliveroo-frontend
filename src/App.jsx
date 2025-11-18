@@ -29,8 +29,10 @@ function App() {
       <Header></Header>
       <Banner restaurant={data.restaurant}></Banner>
       <main>
-        <Categories categories={data.categories}></Categories>
-        <Basket></Basket>
+        <div className="container">
+          <Categories categories={data.categories}></Categories>
+          <Basket></Basket>
+        </div>
       </main>
     </div>
   );
