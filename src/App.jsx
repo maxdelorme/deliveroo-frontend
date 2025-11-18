@@ -1,10 +1,10 @@
 import "./App.css";
 import { useState, useEffect } from "react";
 import axios from "axios";
-import Header from "./assets/components/Header";
-import Banner from "./assets/components/Banner";
-import Categories from "./assets/components/Categories";
-import Basket from "./assets/components/Basket";
+import Header from "./components/Header";
+import Banner from "./components/Banner";
+import Categories from "./components/Categories";
+import Basket from "./components/Basket";
 function App() {
   const [data, setData] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
