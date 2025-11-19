@@ -10,21 +10,12 @@ export const BasketContentProvider = ({ children }) => {
     addItemToBasket: (id, price, title) => {
       const newItem = { id: id, price: price, title: title, count: 1 };
       if (basketContent) {
-        const index = basketContent.findIndex((item) => item.id === id);
-        if (index === -1) {
+        const item = basketContent.find((item) => item.id === id);
+        if (!item) {
           setBasketContent([...basketContent, newItem]);
         } else {
-          console.log(basketContent, index);
-          setBasketContent(
-            basketContent.map((item) =>
-              item.id === id
-                ? {
-                    ...item,
-                    count: item.count + 1,
-                  }
-                : item
-            )
-          );
+          item.count++;
+          setBasketContent([...basketContent]);
         }
       } else {
         setBasketContent([newItem]);
